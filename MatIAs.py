@@ -47,7 +47,7 @@ model = genai.GenerativeModel(
 #Histórico de mensagens(mostrarão na tela o que está sendo conversado)
 
 if "history" not in st.session_state:
-    st.session_state = []
+    st.session_state ["history"]= []
 #fazer a interface
 
 st.title(" **Mat.IA.s**")
