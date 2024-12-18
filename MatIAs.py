@@ -1,6 +1,4 @@
 import os
-from http.client import responses
-from idlelib.history import History
 
 import google.generativeai as genai
 import streamlit as st
