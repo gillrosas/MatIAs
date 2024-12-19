@@ -64,11 +64,20 @@ if user_input:
       # Atualiza o histórico
       st.session_state.history.append({"role": "user", "parts": [user_input]})
       st.session_state.history.append({"role": "model", "parts": [resposta_ia]})
+      # FLAR COM A I.A
+      for messagem in st.session_state.history:
+          if messagem["role"] == "user":
+              st.write(f"**Você**: {messagem['parts'][0]}")
+          elif messagem in st.session_state.history:
+              st.write(f"**MatIAs**: {messagem['parts'][0]}")
 
+      st.session_state.input_text = ""
     except Exception as e:
       st.error(f"ocorreu um erro : {e}")
 
 
+else:
+  st.warning("Por favor, insira uma messagem")
 
 
 
